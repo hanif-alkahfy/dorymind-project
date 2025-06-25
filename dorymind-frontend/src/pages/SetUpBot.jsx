@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CheckCircle, Loader2, XCircle } from "lucide-react";
+import { FaArrowLeft } from "react-icons/fa";
 
 const API_BASE = `${import.meta.env.VITE_BASE_API_URL}api`;
 const API_BASE_IO = `${import.meta.env.VITE_BASE_API_URL}`;
@@ -173,7 +174,15 @@ const SetUpBot = () => {
 
   return (
     <div className="max-w-xl mx-auto px-6 py-10">
-      <div className="bg-white shadow-xl rounded-2xl p-6">
+      <div className="bg-white shadow-xl rounded-2xl p-6 relative">
+        {(botType || showPhoneForm) && (
+          <button
+            className="absolute top-6 left-6 flex items-center text-blue-600 hover:text-blue-800 transition-all"
+            onClick={handleReset} // atau sesuaikan fungsi kembali yang kamu pakai
+          >
+            <FaArrowLeft className="mr-2" />
+          </button>
+        )}
         <h1 className="text-2xl font-bold text-center mb-6 text-blue-700">Setup WhatsApp Bot</h1>
 
         {!botType && !hasBotSetup && (
@@ -185,17 +194,17 @@ const SetUpBot = () => {
                 setShowPhoneForm(true);
               }}
             >
-              🚀 Gunakan Bot Default
+              Gunakan Bot Default
             </button>
 
             <button
               className="bg-green-600 text-white font-medium py-3 px-4 rounded-xl hover:bg-green-700 transition-all"
-              onClick={() => {
-                setBotType("custom");
-                handleGenerateQR();
-              }}
+              // `onClick={() => {
+              //   setBotType("custom");
+              //   handleGenerateQR();
+              // }}`
             >
-              🤖 Gunakan Bot Sendiri
+              Gunakan Bot Sendiri
             </button>
           </div>
         )}
@@ -211,14 +220,14 @@ const SetUpBot = () => {
               className="bg-yellow-500 text-white font-medium py-3 px-4 rounded-xl hover:bg-yellow-600 transition-all"
               onClick={handleUpdateBot}
             >
-              ♻️ Update Bot
+              Update Bot
             </button>
 
             <button
               className="bg-blue-600 text-white font-medium py-3 px-4 rounded-xl hover:bg-blue-700 transition-all"
               onClick={() => setShowPhoneForm(true)}
             >
-              📲 Update Nomor
+              Update Nomor
             </button>
           </div>
         )}
@@ -283,14 +292,7 @@ const SetUpBot = () => {
               className="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-all"
               onClick={handleSave}
             >
-              {isUpdate ? "🔄 Update Nomor" : "💾 Simpan Nomor"}
-            </button>
-
-            <button
-              className="mt-4 text-sm text-blue-600 underline hover:text-blue-800 transition-all"
-              onClick={handleReset}
-            >
-              ← Kembali
+              {isUpdate ? "Update Nomor" : "Simpan Nomor"}
             </button>
           </div>
         )}
