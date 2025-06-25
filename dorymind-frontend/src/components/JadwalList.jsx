@@ -5,7 +5,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 const JadwalList = () => {
   const navigate = useNavigate();
   const [jadwal, setJadwal] = useState([]);
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/jadwals`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/jadwals`;
   const token = localStorage.getItem("token");
 
   useEffect(() => {
