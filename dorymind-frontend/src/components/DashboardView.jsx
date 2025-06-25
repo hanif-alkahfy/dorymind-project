@@ -178,7 +178,7 @@ const DashboardView = () => {
   );
 
   return (
-    <div className="w-full mt-20">
+    <div className="w-full mt-15">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 🔔 Reminder Tugas*/}
         <div className="bg-white/70 backdrop-blur-sm rounded-lg border border-white/70 shadow">
