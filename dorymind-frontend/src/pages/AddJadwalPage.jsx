@@ -4,7 +4,7 @@ import { showSuccessToast, showErrorToast } from "../components/CustomToast";
 
 const AddJadwalPage = () => {
   const navigate = useNavigate();
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/jadwals`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/jadwals`;
   const token = localStorage.getItem("token");
 
   const handleAddJadwal = async (newJadwal) => {

@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import { io } from "socket.io-client";
 import { CheckCircle, Loader2, XCircle } from "lucide-react";
 
-const API_BASE = `${import.meta.env.VITE_BASE_API_URL}/api`;
+const API_BASE = `${import.meta.env.VITE_BASE_API_URL}api`;
 const API_BASE_IO = `${import.meta.env.VITE_BASE_API_URL}`;
 const socket = io(API_BASE_IO);
 

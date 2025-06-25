@@ -6,7 +6,7 @@ import { showSuccessToast, showErrorToast } from "../components/CustomToast";
 const EditJadwalPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/jadwals/${id}`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/jadwals/${id}`;
   const [jadwalData, setJadwalData] = useState(null);
 
   const token = localStorage.getItem("token");

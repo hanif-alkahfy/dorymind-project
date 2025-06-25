@@ -6,7 +6,7 @@ import { showSuccessToast, showErrorToast } from "../components/CustomToast";
 const EditReminderPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/reminders/${id}`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/reminders/${id}`;
   const [reminderData, setReminderData] = useState(null);
   const token = localStorage.getItem("token");
 

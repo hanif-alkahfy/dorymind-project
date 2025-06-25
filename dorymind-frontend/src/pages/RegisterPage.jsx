@@ -10,7 +10,7 @@ const RegisterPage = () => {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/auth/register`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/auth/register`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

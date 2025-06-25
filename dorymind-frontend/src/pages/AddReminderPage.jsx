@@ -3,7 +3,7 @@ import ReminderForm from "../components/ReminderForm";
 
 const AddReminderPage = () => {
   const navigate = useNavigate();
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/reminders`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/reminders`;
   const token = localStorage.getItem("token");
 
   const handleAddReminder = async (newReminder) => {

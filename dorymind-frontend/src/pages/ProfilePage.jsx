@@ -6,7 +6,7 @@ import { showSuccessToast, showErrorToast } from "../components/CustomToast";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
-  const API_URL = `${import.meta.env.VITE_BASE_API_URL}/api/auth/edit`;
+  const API_URL = `${import.meta.env.VITE_BASE_API_URL}api/auth/edit`;
 
   const [user, setUser] = useState(null);
 
