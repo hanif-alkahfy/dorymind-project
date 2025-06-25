@@ -223,8 +223,8 @@ const SetUpBot = () => {
           </div>
         )}
 
-        {botType === "custom" && !showPhoneForm && !hasBotSetup && (
-          <div className="mt-6 text-center">
+        {/*{botType === "custom" && !showPhoneForm && !hasBotSetup && (
+           <div className="mt-6 text-center">
             <p className="text-sm mb-2">
               <span className="font-semibold text-gray-700">Status Bot:</span>{" "}
               {botStatus === "Tersambung" ? (
@@ -266,7 +266,62 @@ const SetUpBot = () => {
               ← Kembali
             </button>
           </div>
-        )}
+        )}*/}
+
+        {botType === "custom" && !showPhoneForm && !hasBotSetup && (
+        <div className="mt-6 flex flex-col" style={{ minHeight: '350px' }}>
+
+            {/* --- BAGIAN KONTEN UTAMA (Fleksibel & Terpusat) --- */}
+            <div className="flex-grow flex flex-col items-center justify-center">
+                <p className="text-sm mb-2">
+                    <span className="font-semibold text-gray-700">Status Bot:</span>{" "}
+                    {botStatus === "Tersambung" ? (
+                        <span className="inline-flex items-center gap-1 text-green-600">
+                            <CheckCircle className="w-4 h-4" /> {botStatus}
+                        </span>
+                    ) : botStatus.includes("QR") ? (
+                        <span className="inline-flex items-center gap-1 text-yellow-600">
+                            <Loader2 className="w-4 h-4 animate-spin" /> {botStatus}
+                        </span>
+                    ) : (
+                        <span className="inline-flex items-center gap-1 text-red-600">
+                            <XCircle className="w-4 h-4" /> {botStatus}
+                        </span>
+                    )}
+                </p>
+
+                {qrData ? (
+                    <div className="bg-gray-100 p-4 rounded-lg inline-block mt-4">
+                        <QRCode value={qrData} size={200} />
+                    </div>
+                ) : (
+                    <div className="h-[232px] flex items-center justify-center"> 
+                        <p className="text-sm text-gray-500">⏳ Menunggu QR Code...</p>
+                    </div>
+                )}
+
+                {isBotReady && (
+                    <button
+                        className="mt-4 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition-all"
+                        onClick={() => setShowPhoneForm(true)}
+                    >
+                        ✅ Lanjutkan
+                    </button>
+                )}
+            </div>
+
+            {/* --- BAGIAN TOMBOL KEMBALI (Posisi Tetap di Bawah TENGAH) --- */}
+            <div className="w-full mt-auto pt-4 flex justify-center"> {/* <-- Perubahan di sini */}
+                <button
+                    className="text-sm text-blue-600 underline hover:text-blue-800 transition-all"
+                    onClick={handleReset}
+                >
+                    ← Kembali
+                </button>
+            </div>
+
+              </div>
+      )}
 
         {showPhoneForm && (
           <div className="mt-8">

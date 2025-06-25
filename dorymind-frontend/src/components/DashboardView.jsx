@@ -137,14 +137,14 @@ const DashboardView = () => {
   }, []);
 
   const JadwalCard = ({ jadwal }) => (
-    <div className="bg-white/70 backdrop-blur-sm border border-white/50 shadow rounded-lg p-4">
+    <div className="bg-white/70 backdrop-blur-sm shadow rounded-lg p-4 border-l-4 border-[#29B6F6]">
       <div className="flex justify-between items-start mb-2">
         <h3 className="font-semibold text-gray-900">{jadwal.mataKuliah}</h3>
         <span className="text-xs bg-blue-100 text-blue-800 border border-blue-200 px-2 py-1 rounded-full">
           {jadwal.hari}
         </span>
       </div>
-      <div className="text-sm text-gray-600 space-y-1">
+      <div className="text-sm text-gray-600 mb-2 ">
         <div>🕒 {jadwal.jamKuliah}</div>
         <div>🏫 {jadwal.ruang}</div>
       </div>
@@ -180,11 +180,11 @@ const DashboardView = () => {
   return (
     <div className="w-full mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* 🔔 Reminder Terdekat */}
-        <div className="bg-white/70 backdrop-blur-sm rounded-lg border border-white/50 shadow">
-          <div className="p-6 border-b border-white/30">
+        {/* 🔔 Reminder Tugas*/}
+        <div className="bg-white/70 backdrop-blur-sm rounded-lg border border-white/70 shadow">
+          <div className="p-6 border-b border-white/50">
             <h2 className="text-xl font-semibold text-[#01579B]">
-              🔔 Reminder Terdekat <span className="ml-2 text-sm text-gray-500">({reminderTerdekat.length} tugas)</span>
+              🔔 Reminder Tugas <span className="ml-2 text-sm text-gray-500">({reminderTerdekat.length} tugas)</span>
             </h2>
           </div>
           <div className="p-6">
@@ -202,11 +202,11 @@ const DashboardView = () => {
           </div>
         </div>
 
-        {/* 📅 Jadwal Hari Ini */}
-        <div className="bg-white/70 backdrop-blur-sm rounded-lg border border-white/50 shadow">
-          <div className="p-6 border-b border-white/30">
+        {/* 📅 Jadwal Perkuliahan */}
+        <div className="bg-white/70 backdrop-blur-sm rounded-lg border border-white/70 shadow">
+          <div className="p-6 border-b border-white/50">
             <h2 className="text-xl font-semibold text-[#01579B] ">
-              📅 Jadwal Hari Ini <span className="ml-2 text-sm text-gray-500">({jadwalHariIni.length} kelas)</span>
+              📅 Jadwal Perkuliahan <span className="ml-2 text-sm text-gray-500">({jadwalHariIni.length} kelas)</span>
             </h2>
           </div>
           <div className="p-6">
