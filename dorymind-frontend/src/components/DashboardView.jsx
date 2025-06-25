@@ -1,7 +1,9 @@
-{/* <--
- import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const DashboardView = () => {
+  const [jadwalHariIni, setJadwalHariIni] = useState([]);
+  const [reminderTerdekat, setReminderTerdekat] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({ username: "Guest" });
 
   useEffect(() => {
@@ -18,23 +20,6 @@ const DashboardView = () => {
       localStorage.removeItem("user"); // Hapus jika error
     }
   }, []);
-
-  return (
-    <div className="mt-5">
-      <h2 className="text-3xl font-bold text-[#01579B] mb-6">Halo, {user.username}</h2>
-      
-    </div>
-  );
-};
-
-export default DashboardView; */}
-
-import { useState, useEffect } from "react";
-
-const DashboardView = () => {
-  const [jadwalHariIni, setJadwalHariIni] = useState([]);
-  const [reminderTerdekat, setReminderTerdekat] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const fetchJadwalFromAPI = async () => {
     // ✅ URL API konsisten JadwalList
@@ -178,7 +163,8 @@ const DashboardView = () => {
   );
 
   return (
-    <div className="w-full mt-20">
+    <div className="w-full mt-10">
+      <h2 className="text-3xl font-bold text-[#01579B] mb-6">Halo, {user.username}</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 🔔 Reminder Terdekat */}
         <div className="bg-white/70 backdrop-blur-sm rounded-lg border border-white/50 shadow">
