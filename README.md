@@ -287,7 +287,7 @@ Header: `Authorization: Bearer <token>`
 ## 🧪 Pengembangan Lokal
 
 - Jalankan frontend: `npm run dev`
-- Jalankan backend: `pm2 start server.js`
+- Jalankan backend: `nodemon server.js`
 - Gunakan Cloudflare Tunnel untuk expose backend ke publik
 
 Contoh `.env`:
