@@ -14,6 +14,7 @@ const JadwalList = () => {
         const response = await fetch(API_URL, {
           headers: {
             Authorization: `Bearer ${token}`,
+            'ngrok-skip-browser-warning': 'true',
           },
         });
 
